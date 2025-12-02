@@ -1,6 +1,34 @@
-import React from 'react'
+import { Api } from '@/pages/api/Api'
+import React, { useState } from 'react'
 
 export default function Workwithus() {
+    const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        role: "",
+        message: ""
+    });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setLoading(true)
+        const response = Api.post("/enquiry/create", formData)
+        response.then((res) => {
+            console.log("res", res);
+            setTimeout(() => {
+                alert("Form Submited.")
+            }, 1000)
+        }).catch((error) => {
+            console.error("Error", error)
+            alert("Something went wrong while submitting the form")
+        }).finally(() => {
+            setLoading(false)
+        })
+
+    }
     return (
         <div id='contact' className="scroll mx-auto max-w-6xl flex flex-col items-center justify-center py-16 px-4">
 
@@ -22,14 +50,14 @@ export default function Workwithus() {
                         Join Us — Apply Now
                     </h2>
                     <p className="text-lg md:text-xl text-gray-500 mt-4 font-poppins">
-                        Simply fill out the form below and choose your preferred role.  
+                        Simply fill out the form below and choose your preferred role.
                         Our team will get in touch within 24–48 hours.
                     </p>
                 </div>
 
                 {/* Form Section */}
-                <div className="w-full md:w-1/2 border border-gray-200 rounded-3xl p-8 shadow-sm space-y-5 bg-white">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="w-full md:w-1/2 border border-gray-200 rounded-3xl p-8 shadow-sm space-y-5 bg-white">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
                         {/* Join As */}
                         <div className="col-span-1 md:col-span-2">
@@ -42,11 +70,15 @@ export default function Workwithus() {
                                 <label className="w-full cursor-pointer flex items-center gap-4 border border-gray-300 hover:border-blue-500 transition rounded-2xl p-4">
                                     <input
                                         type="radio"
+                                        value={formData.role}
+                                        onChange={(e) => {
+                                            setFormData({ ...formData, role: "vendor" })
+                                        }}
                                         name="position"
                                         className="accent-blue-700 font-poppins w-5 h-5"
                                     />
                                     <div>
-                                        <p className="text-lg font-semibold font-poppins">Vendor</p>
+                                        <p className="text-lg font-poppins">Vendor</p>
                                         <p className="text-gray-500 text-sm font-poppins">Grow my business</p>
                                     </div>
                                 </label>
@@ -55,15 +87,20 @@ export default function Workwithus() {
                                 <label className="w-full cursor-pointer flex items-center gap-4 border border-gray-300 hover:border-blue-500 transition rounded-2xl p-4">
                                     <input
                                         type="radio"
+                                        value={formData.role}
+                                        onChange={(e) => {
+                                            console.log(e)
+                                            setFormData({ ...formData, role: "sales" })
+            
+                                        }}
                                         name="position"
                                         className="accent-blue-700 font-poppins w-5 h-5"
                                     />
                                     <div>
-                                        <p className="text-lg font-semibold font-poppins">Sales</p>
+                                        <p className="text-lg font-poppins">Sales</p>
                                         <p className="text-gray-500 text-sm font-poppins">Build my career</p>
                                     </div>
                                 </label>
-
                             </div>
                         </div>
 
@@ -72,8 +109,13 @@ export default function Workwithus() {
                             <label className="font-medium font-poppins">First name</label>
                             <input
                                 type="text"
+                                value={formData.firstName}
+                                onChange={(e) => {
+                                    setFormData({ ...formData, firstName: e.target.value })
+                                }}
                                 placeholder="Enter first name"
                                 className="border border-gray-300 rounded-xl p-3 mt-1 outline-none transition font-poppins"
+                                required
                             />
                         </div>
 
@@ -81,8 +123,13 @@ export default function Workwithus() {
                             <label className="font-medium font-poppins">Last name</label>
                             <input
                                 type="text"
+                                value={formData.lastName}
+                                onChange={(e) => {
+                                    setFormData({ ...formData, lastName: e.target.value })
+                                }}
                                 placeholder="Enter last name"
                                 className="border border-gray-300 rounded-xl p-3 mt-1 outline-none transition font-poppins"
+                                required
                             />
                         </div>
 
@@ -90,8 +137,13 @@ export default function Workwithus() {
                             <label className="font-medium font-poppins">Email</label>
                             <input
                                 type="email"
+                                value={formData.email}
+                                onChange={(e) => {
+                                    setFormData({ ...formData, email: e.target.value })
+                                }}
                                 placeholder="Enter email"
                                 className="border border-gray-300 rounded-xl p-3 mt-1 outline-none transition font-poppins"
+                                required
                             />
                         </div>
 
@@ -99,19 +151,30 @@ export default function Workwithus() {
                             <label className="font-medium font-poppins">Phone</label>
                             <input
                                 type="text"
+                                value={formData.phone}
+                                onChange={(e) => {
+                                    setFormData({ ...formData, phone: e.target.value })
+                                }}
                                 placeholder="Enter phone"
                                 className="border border-gray-300 rounded-xl p-3 mt-1 outline-none transition font-poppins"
+                                required
                             />
                         </div>
                     </div>
                     <div className="flex flex-col">
                         <label className='font-medium font-poppins'>Message</label>
-                        <textarea className="border border-gray-300 rounded-xl p-2"></textarea>
+                        <textarea
+                            value={formData.message}
+                            onChange={(e) => {
+                                setFormData({ ...formData, message: e.target.value })
+                            }}
+                            className="border border-gray-300 rounded-xl p-2"
+                        />
                     </div>
-                    <button className='w-full bg-blue-900 text-white p-3 rounded-xl font-poppins'>
-                        Submit
+                    <button type='submit' className='w-full bg-blue-900 text-white p-3 rounded-xl font-poppins'>
+                        {loading ? "Submitting.." : "Submit"}
                     </button>
-                </div>
+                </form>
             </div>
 
         </div>

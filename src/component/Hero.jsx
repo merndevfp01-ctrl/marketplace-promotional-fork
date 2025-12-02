@@ -69,7 +69,7 @@ export default function Hero() {
             {/* Approval */}
             <div className="w-50 float-slow flex flex-col items-center gap-2 absolute bottom-10 right-60 z-50 bg-white/90 text-center rounded-2xl p-4">
               <CheckCircle className="text-green-600 h-8 w-8" />
-              <h3 className="text-xl font-poppins">Instant Approval</h3>
+              <h3 className="text-normal font-poppins">INSTANT APPROVAL</h3>
               <p className="text-sm text-gray-600 font-poppins">with in 3-5 seconds</p>
             </div>
             {/* #1 card */}

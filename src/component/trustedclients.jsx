@@ -86,7 +86,6 @@ export default function TrustedClientsSection() {
               <p className="text-gray-700 text-lg leading-relaxed font-poppins">
                 “{data.description}”
               </p>
-
               {/* Divider */}
               <div className="w-12 h-1 bg-blue-900 rounded-full mt-2"></div>
             </div>
