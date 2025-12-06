@@ -172,7 +172,7 @@ export default function Workwithus() {
                             className="border border-gray-300 rounded-xl p-2"
                         />
                     </div>
-                    <button type='submit' className='w-full bg-blue-900 text-white p-3 rounded-xl font-poppins'>
+                    <button type='submit' className='w-full bg-blue-900 hover:bg-blue-950 text-white p-3 rounded-xl font-poppins'>
                         {loading ? "Submitting.." : "Submit"}
                     </button>
                 </form>
