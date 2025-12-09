@@ -42,9 +42,9 @@ export default function Workwithus() {
             </p>
 
             {/* Main Content */}
-            <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full">
+            <div className="flex flex-col md:flex-row justify-center items-start gap-12 w-full">
 
-                {/* Left Section */}
+                {/* Left Section
                 <div className=" w-full md:w-1/2">
                     <h2 className="text-3xl md:text-5xl text-gray-800 font-bold font-montserrat">
                         Join Us — Apply Now
@@ -53,7 +53,7 @@ export default function Workwithus() {
                         Simply fill out the form below and choose your preferred role.
                         Our team will get in touch within 24–48 hours.
                     </p>
-                </div>
+                </div> */}
 
                 {/* Form Section */}
                 <form onSubmit={handleSubmit} className="w-full md:w-1/2 border border-gray-200 rounded-3xl p-8 shadow-sm space-y-5 bg-white">
