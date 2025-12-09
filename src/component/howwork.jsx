@@ -19,7 +19,7 @@ const card = [
         description: "The vendor reviews and approves the offer instantly to confirm the final payable amount."
     },
     {
-        image: "/payment.png",
+        image: "/Payment.png",
         heading: "Pay Less",
         description: "Your discount is applied immediately — pay the reduced price and enjoy your savings."
     }
@@ -44,15 +44,15 @@ export default function Howwork() {
                                     src={"/mobile3.png"}
                                     height={400}
                                     width={400}
-                                    className='w-96'
+                                    className='w-92'
                                 />
                                 <div className='absolute top-8 right'>
                                     <Image
                                         src={data.image}
-                                        height={138}
-                                        width={138}
+                                        height={127}
+                                        width={127}
                                         alt=''
-                                        className=' rounded-2xl'
+                                        className='rounded-2xl'
                                     />
                                 </div>
                             </div>

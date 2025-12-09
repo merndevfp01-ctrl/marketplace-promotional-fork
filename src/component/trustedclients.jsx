@@ -60,7 +60,7 @@ export default function TrustedClientsSection() {
           {card.map((data, index) => (
             <div
               key={index}
-              className="bg-gray-50 border border-gray-200 rounded-2xl p-7 flex flex-col gap-6 shadow-sm hover:shadow-md transition"
+              className="bg-gray-50 border border-gray-200 rounded-2xl p-4 md:p-7 flex flex-col gap-6 shadow-sm hover:shadow-md transition"
             >
               {/* Top */}
               <div className="flex items-center gap-4">
@@ -83,7 +83,7 @@ export default function TrustedClientsSection() {
               </div>
 
               {/* Message */}
-              <p className="text-gray-700 text-lg leading-relaxed font-poppins">
+              <p className="text-gray-700 text-normal md:text-lg leading-relaxed font-poppins">
                 “{data.description}”
               </p>
               {/* Divider */}

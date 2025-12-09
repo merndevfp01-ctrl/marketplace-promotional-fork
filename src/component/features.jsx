@@ -50,7 +50,7 @@ export default function Features() {
                             {data.icon}
                         </div>
                         <h3 className="text-xl md:text-2xl font-normal font-poppins">{data.heading}</h3>
-                        <p className="text-lg text-gray-700 font-poppins">{data.description}</p>
+                        <p className="text-normal md:text-lg text-gray-700 font-poppins">{data.description}</p>
                         {/* Divider */}
                         <div className="w-12 h-1 bg-blue-900 rounded-full mt-2"></div>
                     </div>

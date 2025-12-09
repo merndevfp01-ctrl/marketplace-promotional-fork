@@ -45,7 +45,7 @@ export default function Workwithus() {
             <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full">
 
                 {/* Left Section */}
-                <div className="sticky top-1 w-full md:w-1/2">
+                <div className=" w-full md:w-1/2">
                     <h2 className="text-3xl md:text-5xl text-gray-800 font-bold font-montserrat">
                         Join Us — Apply Now
                     </h2>
