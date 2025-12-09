@@ -15,7 +15,7 @@ export default function Hero() {
       </div>
 
       {/* Dark overlay */}
-      <div className="bg-black/40 container min-h-screen w-full flex flex-col md:flex-row justify-center items-center mx-auto">
+      <div className="bg-black/40 w-full min-h-screen flex flex-col md:flex-row justify-center items-center px-4 md:px-0">
 
         {/* Left */}
         <div className="w-full md:w-1/2 px-4 md:px-6 pt-36 pb-20 space-y-6 md:space-y-8 text-center md:text-left">
