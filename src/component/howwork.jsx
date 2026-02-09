@@ -27,7 +27,7 @@ const card = [
 
 export default function Howwork() {
     return (
-        <div id='work' className='scroll mx-auto max-w-6xl flex flex-col items-center text-center px-4'>
+        <div id='work' className='scroll mx-auto container flex flex-col items-center text-center px-4'>
             <h1 className="text-3xl md:text-5xl font-semibold bg-gradient-to-b from-blue-950 via-blue-900 to-gray-900 bg-clip-text text-transparent font-montserrat">
                 How It Works
             </h1>

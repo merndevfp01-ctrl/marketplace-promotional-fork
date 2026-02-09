@@ -43,7 +43,7 @@ const card = [
 export default function TrustedClientsSection() {
   return (
     <section className="w-full px-5 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
 
         {/* HEADER */}
         <div className="text-center mb-16">

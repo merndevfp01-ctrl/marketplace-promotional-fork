@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Download() {
     return (
-        <div className="mx-auto max-w-6xl bg-gradient-to-b from-blue-950 via-blue-900 to-gray-900 text-white rounded-3xl overflow-hidden p-6 md:p-0 flex flex-col md:flex-row items-center gap-12">
+        <div className="mx-auto container bg-gradient-to-b from-blue-950 via-blue-900 to-gray-900 text-white rounded-3xl overflow-hidden p-6 md:p-0 flex flex-col md:flex-row items-center gap-12">
             <div className="relative flex justify-center md:justify-start w-full md:w-auto">
                 <Image
                     src="/mobile3.png"
