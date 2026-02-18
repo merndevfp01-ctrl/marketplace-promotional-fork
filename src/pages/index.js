@@ -1,16 +1,33 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-import { BadgeIndianRupee, Calculator, CheckCircle, Eye, MapPin, Percent, Sparkles, Store, UserRound, Zap } from "lucide-react";
 import TrustedClientsSection from "@/component/trustedclients"; import Hero from "@/component/Hero";
 import Features from "@/component/features";
-import Howitwork from "@/component/howitwork";
 import Download from "@/component/download";
 import Workwithus from "@/component/workwithus";
 import Howwork from "@/component/howwork";
-;
+import { useEffect, useRef } from "react";
 
+export default function Home({setScrollFunction}) {
+  const heroRef = useRef(null);
+  const featureRef = useRef(null);
+  const workRef = useRef(null);
+  const clientRef = useRef(null);
+  const downloadRef = useRef(null);
+  const contactRef = useRef(null);
 
-export default function Home() {
+  const scrollTo = (ref) =>{
+    ref.current?.scrollIntoView({behavior : "smooth"})
+  }
+
+  useEffect(()=>{
+    setScrollFunction({
+      hero:()=> scrollTo(heroRef),
+      feature:()=> scrollTo(featureRef),
+      work:()=> scrollTo(workRef),
+      client:()=> scrollTo(clientRef),
+      download:()=> scrollTo(downloadRef),
+      contact:()=> scrollTo(contactRef)
+    })
+  },[setScrollFunction]);
+
   return (
     <div className="w-full space-y-20 mb-20">
       <Hero />
@@ -19,17 +36,16 @@ export default function Home() {
       <Features />
 
       {/* Howitwork */}
-      {/* <Howitwork /> */}
-      <Howwork/>
+      <Howwork />
 
       {/* Clients */}
       <TrustedClientsSection />
 
       {/* Download now */}
-      <Download/>
+      <Download />
 
       {/* Work with us */}
-      <Workwithus/>
+      <Workwithus />
     </div>
   );
 }

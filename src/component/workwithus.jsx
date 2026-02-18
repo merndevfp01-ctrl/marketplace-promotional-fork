@@ -1,7 +1,7 @@
 import { Api } from '@/pages/api/Api'
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 
-export default function Workwithus() {
+const Workwithus = forwardRef((props, ref) =>{
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
@@ -30,7 +30,7 @@ export default function Workwithus() {
 
     }
     return (
-        <div id='contact' className="scroll mx-auto container flex flex-col items-center justify-center px-4">
+        <div ref={ref} className="scroll-mt-20 mx-auto container flex flex-col items-center justify-center px-4">
 
             {/* Heading */}
             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-b from-blue-950 via-blue-900 to-gray-900 bg-clip-text text-transparent font-montserrat">
@@ -172,7 +172,7 @@ export default function Workwithus() {
                             className="border border-gray-300 rounded-xl p-2"
                         />
                     </div>
-                    <button type='submit' className='w-full bg-blue-900 hover:bg-blue-950 text-white p-3 rounded-xl font-poppins'>
+                    <button type='submit' className='w-full bg-blue-900 hover:bg-blue-950 text-white p-3 rounded-xl cursor-pointer font-poppins'>
                         {loading ? "Submitting.." : "Submit"}
                     </button>
                 </form>
@@ -180,4 +180,6 @@ export default function Workwithus() {
 
         </div>
     );
-}
+})
+
+export default Workwithus

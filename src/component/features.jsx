@@ -1,5 +1,5 @@
 import { Calculator, Eye, MapPin, Sparkles, Store, Zap } from 'lucide-react'
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 const feature = [
     {
@@ -34,9 +34,9 @@ const feature = [
     }
 ]
 
-export default function Features() {
+const Features = forwardRef((props, ref) => {
     return (
-        <div id='features' className="scroll mx-auto container flex flex-col justify-center items-center px-4">
+        <div ref={ref} className="scroll-mt-20 mx-auto container flex flex-col justify-center items-center px-4 md:px-0">
             <div className="text-center">
                 <h1 className="text-3xl md:text-5xl font-semibold bg-gradient-to-b from-blue-950 via-blue-900 to-gray-900 bg-clip-text text-transparent font-montserrat">
                     Smart Features for Easy Savings
@@ -60,4 +60,6 @@ export default function Features() {
             </div>
         </div>
     )
-}
+})
+
+export default Features

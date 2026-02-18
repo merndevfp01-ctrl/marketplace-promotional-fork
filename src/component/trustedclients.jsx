@@ -3,37 +3,37 @@ import Image from "next/image";
 
 const card = [
   {
-    name: "Sarah Mitchell",
+    name: "Aarav Sharma",
     place: "Jaipur, Rajasthan",
     description:
-      "I've saved over $300 in just two months! The QR code system is so easy to use. I scan at checkout and boom - instant discount.",
+      "I've saved over ₹4000 in just two months! The QR code system is so easy to use. I scan at checkout and boom - instant discount.",
   },
   {
-    name: "James Rodriguez",
+    name: "Vivaan Gupta",
     place: "Jaipur, Rajasthan",
     description:
       "The entire experience is smooth. Redeeming discounts takes literally 2 seconds. Highly recommended!",
   },
   {
-    name: "Emily Chen",
+    name: "Ananya Verma",
     place: "Jaipur, Rajasthan",
     description:
       "Such a helpful platform! Saves me time AND money. The cashback and QR discount combo is amazing.",
   },
   {
-    name: "Michael Thompson",
+    name: "Aditya Singh",
     place: "Jaipur, Rajasthan",
     description:
       "Super easy to use! I’ve recommended it to all my friends and family. The discounts are real!",
   },
   {
-    name: "David Park",
+    name: "Rohan Mehta",
     place: "Jaipur, Rajasthan",
     description:
       "A very intuitive and helpful discount platform. Works smoothly everywhere!",
   },
   {
-    name: "Jhon Doe",
+    name: "Priya Kapoor",
     place: "Jaipur, Rajasthan",
     description:
       "A very intuitive and helpful discount platform. Works smoothly everywhere!",
