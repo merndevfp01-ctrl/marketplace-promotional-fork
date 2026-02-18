@@ -25,8 +25,8 @@ const card = [
     }
 ]
 
-const Howwork = forwardRef((props, ref)=>{
-    const {scrollFns} = props
+const Howwork = forwardRef((props, ref) => {
+    const { scrollFns } = props
     return (
         <div ref={ref} className='scroll-mt-20 w-full mx-auto container flex flex-col items-center text-center px-4 md:px-0'>
             <h1 className="text-3xl md:text-5xl font-semibold bg-gradient-to-b from-blue-950 via-blue-900 to-gray-900 bg-clip-text text-transparent font-montserrat">
@@ -67,7 +67,7 @@ const Howwork = forwardRef((props, ref)=>{
                                 <p className='text-normal md:text-xl text-gray-600 font-poppins'>
                                     {data.description}
                                 </p>
-                                <button onClick={()=> scrollFns?.download?.()} className='flex items-center gap-2 text-sm md:text-md bg-blue-900 text-white rounded-lg py-2 px-6 font-poppins cursor-pointer'>
+                                <button onClick={() => scrollFns?.download?.()} className='flex items-center gap-2 text-sm md:text-md bg-blue-900 text-white rounded-lg py-2 px-6 font-poppins cursor-pointer'>
                                     Get Started
                                     <ArrowRight className='h-5 w-5' />
                                 </button>

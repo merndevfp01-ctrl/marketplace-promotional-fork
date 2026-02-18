@@ -30,22 +30,22 @@ export default function Home({setScrollFunction}) {
 
   return (
     <div className="w-full space-y-20 mb-20">
-      <Hero />
+      <Hero ref={heroRef} />
 
       {/* Features */}
-      <Features />
+      <Features ref={featureRef}/>
 
       {/* Howitwork */}
-      <Howwork />
+      <Howwork ref={workRef}/>
 
       {/* Clients */}
-      <TrustedClientsSection />
+      <TrustedClientsSection ref={clientRef}/>
 
       {/* Download now */}
-      <Download />
+      <Download ref={downloadRef}/>
 
       {/* Work with us */}
-      <Workwithus />
+      <Workwithus ref={contactRef}/>
     </div>
   );
 }
