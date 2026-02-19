@@ -1,7 +1,8 @@
 import { Api } from '@/pages/api/Api'
 import React, { forwardRef, useState } from 'react'
+import { toast } from 'react-toastify';
 
-const Workwithus = forwardRef((props, ref) =>{
+const Workwithus = forwardRef((props, ref) => {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         firstName: "",
@@ -17,13 +18,22 @@ const Workwithus = forwardRef((props, ref) =>{
         setLoading(true)
         const response = Api.post("/enquiry/create", formData)
         response.then((res) => {
-            console.log("res", res);
-            setTimeout(() => {
-                alert("Form Submited.")
-            }, 1000)
+            if (res.data.status) {
+                setTimeout(() => {
+                    toast.success(res?.data?.message)
+                }, 1000)
+                setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    phone: "+91 ",
+                    role: "",
+                    message: ""
+                })
+            }
         }).catch((error) => {
             console.error("Error", error)
-            alert("Something went wrong while submitting the form")
+            toast.error(error?.response?.data?.message)
         }).finally(() => {
             setLoading(false)
         })
@@ -91,7 +101,7 @@ const Workwithus = forwardRef((props, ref) =>{
                                         onChange={(e) => {
                                             console.log(e)
                                             setFormData({ ...formData, role: "sales" })
-            
+
                                         }}
                                         name="position"
                                         className="accent-blue-700 font-poppins w-5 h-5"

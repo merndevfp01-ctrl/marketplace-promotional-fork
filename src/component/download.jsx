@@ -25,7 +25,7 @@ const Download = forwardRef((props, ref) => {
                 </div>
             </div>
             {/* Right Section Text */}
-            <div className="text-center md:text-right w-full md:w-1/2 space-y-5 md:space-y-7">
+            <div className="text-center w-full md:w-1/2 space-y-5 md:space-y-7">
 
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-montserrat leading-snug">
                     Your Smart Savings Companion — Always With You
@@ -35,7 +35,7 @@ const Download = forwardRef((props, ref) => {
                     Scan offers, redeem discounts, and save money instantly — right from your phone.
                 </p>
 
-                <div className="flex flex-col sm:flex-row justify-center md:justify-end items-center gap-4 font-poppins pt-2">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 font-poppins pt-2">
 
                     {/* Google Play */}
                     <Link
